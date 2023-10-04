@@ -8,7 +8,7 @@ import 'virtual:uno.css'
     <header>
       <div class="wrapper">
         <nav>
-          <RouterLink to="/">Home</RouterLink> |
+          <RouterLink to="/">Events</RouterLink> |
           <RouterLink to="/about">About</RouterLink>
         </nav>
       </div>
