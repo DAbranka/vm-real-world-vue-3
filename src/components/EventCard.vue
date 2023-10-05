@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <Router-link to="/event/1">
+  <Router-link class="eventLink" :to="{name: 'event-details', params: { id: event.id }}">
     <div class="eventCard">
       <!-- Display Event Data -->
       <h2>{{ event.title }}</h2>
@@ -29,5 +29,10 @@ defineProps({
   .eventCard:hover {
     transform: scale(1.01);
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .eventLink {
+    color: #2c3e50;
+    text-decoration: none;
   }
 </style>
