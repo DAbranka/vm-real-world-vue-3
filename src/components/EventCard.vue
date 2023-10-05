@@ -8,11 +8,13 @@ defineProps({
 </script>
 
 <template>
-  <div class="eventCard">
-    <!-- Display Event Data -->
-    <h2>{{ event.title }}</h2>
-    <span>@{{ event.time }} on {{ event.date }}</span>
-  </div>
+  <Router-link to="/event/1">
+    <div class="eventCard">
+      <!-- Display Event Data -->
+      <h2>{{ event.title }}</h2>
+      <span>@{{ event.time }} on {{ event.date }}</span>
+    </div>
+  </Router-link>
 </template>
 
 <style scoped>

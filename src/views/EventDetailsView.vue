@@ -1,30 +1,27 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import EventService from '@/services/EventSercie'
+import EventService from '@/services/EventService'
 
 
 const event = ref(null)
-
-const id = ref(123)
+const id = ref(1)
 
 onMounted(() => {
     EventService.getEvent(id.value)
     .then((response) => {
         event.value = response.data
-    }).catch((error) => {
-        console.log(error)
+    })
+    .catch((error) => {
+        console.log('Event Service ERROR CODE:', error.code)
+        console.log('Event Service ERROR message:', error.message)
     });
 })
 </script>
 
 <template>
-    <div>
+    <div v-if="event">
         <h1>{{ event.title }}</h1>
         <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
         <p>{{ event.description }}</p>
     </div>
 </template>
-
-<style scoped>
-
-</style>
